@@ -14,7 +14,7 @@ class Bycicle: Vehicle {}
 // We can override func and computed properties
 class Train: Vehicle {
     override var description: String {
-        return "speed may vary -_-"
+        super.description + " " + "But speed on train may vary -_-"  // Дополнение функционала
     }
     // Дополнение функционала
     override func makeNoise() {
