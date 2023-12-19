@@ -58,6 +58,7 @@ naviGlitterSticker.changePrice(to: 250)
 naviGlitterSticker.price
 
 var karambit = Knife()
+karambit.changePrice(to: 680) // 680
 var uspS = Pistol()
 uspS.hasSilencer(true)
 var m4a4 = Rifle()
@@ -70,3 +71,5 @@ s1mple.buyItem(name: karambit)
 s1mple.inventory[0]
 s1mple.inventory[1]
 
+var temp: CsGoItem = karambit
+temp.price // 680
