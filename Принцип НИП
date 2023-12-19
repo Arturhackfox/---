@@ -71,5 +71,5 @@ s1mple.buyItem(name: karambit)
 s1mple.inventory[0]
 s1mple.inventory[1]
 
-var temp: CsGoItem = karambit
+var temp: CsGoItem = karambit // we gain access to Base class properties
 temp.price // 680
