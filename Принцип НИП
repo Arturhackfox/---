@@ -1,0 +1,72 @@
+import UIKit
+
+// Inheritance Encapsulation Polymorphism
+// Наследование, Инкапсуляция, Полиморфизм
+
+//                       [CSGOItem]
+//       [Sticker]                     [Weapon]
+//    [Glitter] [Holo]          [Knife]  [Pistol]  [Rifle]
+                    
+
+class CsGoItem {
+   private (set) var rarity: String = "none"
+   private (set) var price: Int = 0
+    
+    func changePrice(to: Int) { price = to }
+}
+//----------------
+class Sticker: CsGoItem {
+   private (set) var yearReleased: Int = 0
+}
+class Glitter: Sticker {
+   private (set) var isHighGlitterEffect: Bool = false
+}
+class Holo: Sticker {
+   private (set) var isHighHoloEffect: Bool = false
+}
+//----------------
+class Weapon: CsGoItem {
+    private var damage: Int = 0
+    private var animation: Bool = false
+}
+class Knife: Weapon {
+    private (set) var knifeSkinName: String = "Damascuss Steel"
+}
+class Pistol: Weapon {
+    private var hasSilencer: Bool = false
+    func hasSilencer(_ to: Bool) { hasSilencer = to}
+}
+class Rifle: Weapon {
+    private (set) var magCapacity: Int = 0
+    func setMagCapacity(_ to: Int) { magCapacity = to }
+}
+
+class Player {
+    private (set) var inventory = [CsGoItem]()
+    
+    func buyItem(name: CsGoItem) {
+        inventory.append(name)
+    }
+}
+
+//      [Player] func(buyItem: CSGOItem) -> Knife, Pistol, Rifle, Glitter, Holo
+//                       [CSGOItem]
+//       [Sticker]                     [Weapon]
+//    [Glitter] [Holo]          [Knife]  [Pistol]  [Rifle]
+var naviGlitterSticker = Glitter()
+naviGlitterSticker.changePrice(to: 250)
+naviGlitterSticker.price
+
+var karambit = Knife()
+var uspS = Pistol()
+uspS.hasSilencer(true)
+var m4a4 = Rifle()
+m4a4.setMagCapacity(30)
+
+var s1mple = Player()
+s1mple.buyItem(name: naviGlitterSticker)
+s1mple.buyItem(name: karambit)
+
+s1mple.inventory[0]
+s1mple.inventory[1]
+
