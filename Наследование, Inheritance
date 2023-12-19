@@ -1,5 +1,6 @@
 // Inheritance, Унаследование
 class Vehicle {
+    var price = 0.0
     var speed = 25
     var description: String {
         return "Current speed is: \(speed)"
@@ -8,8 +9,14 @@ class Vehicle {
     func makeNoise(){
         print("I sound like: ")
     }
+    
+    final func sayPrice(){
+        print("Price is: \(price)")
+    }
 }
-class Bycicle: Vehicle {}
+final class Bycicle: Vehicle { // final class - запрещает унаследовать от Bycicle 
+       
+}
 
 // We can override func and computed properties
 class Train: Vehicle {
@@ -29,6 +36,4 @@ train.makeNoise()
 
 print(bike.description)
 print(train.description)
-
-
 
