@@ -14,12 +14,12 @@ class Vehicle {
         print("Price is: \(price)")
     }
 }
-final class Bycicle: Vehicle { // final class - запрещает унаследовать от Bycicle 
+final class Bycicle: Vehicle { // final class - запрещает унаследовать от Bycicle
        
 }
 
 // We can override func and computed properties
-class Train: Vehicle {
+final class Train: Vehicle {
     override var description: String {
         super.description + " " + "But speed on train may vary -_-"  // Дополнение функционала
     }
