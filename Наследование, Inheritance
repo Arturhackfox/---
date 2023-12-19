@@ -1,0 +1,34 @@
+// Inheritance, Унаследование
+class Vehicle {
+    var speed = 25
+    var description: String {
+        return "Current speed is: \(speed)"
+    }
+    
+    func makeNoise(){
+        print("I sound like: ")
+    }
+}
+class Bycicle: Vehicle {}
+
+// We can override func and computed properties
+class Train: Vehicle {
+    override var description: String {
+        return "speed may vary -_-"
+    }
+    // Дополнение функционала
+    override func makeNoise() {
+        super.makeNoise()         // сначала мы вызовем функцию Базового класса
+        print("Chu chu Chu chu")  // а дальше новую фичу
+    }
+}
+
+var bike = Bycicle()
+var train = Train()
+train.makeNoise()
+
+print(bike.description)
+print(train.description)
+
+
+
