@@ -1,0 +1,21 @@
+#accesscontrol #access  reference и value типы 
+
+class Person {
+    public var name = "Vinston"
+}
+
+struct Person1 {
+    public var name = "Vinston"
+}
+
+class Life {
+    private (set) var vinston = Person()  // нельзя менять ссылку внутри var
+    private (set) var vinstonStruct = Person1() // нельзя менять сам объект внутри, структуре придётся разбиться и создать копию с новым значение и присвоиться.
+}
+
+var lifeOfVinston = Life()
+lifeOfVinston.vinston.name = "Vitya"
+print(lifeOfVinston.vinston.name)
+
+lifeOfVinston.vinstonStruct.name = "Viktor" // ERROR -----------> ПОПЫТКА private (set) var vinstonStruct = Person(name: Viktor)
+
