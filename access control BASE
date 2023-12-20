@@ -1,0 +1,31 @@
+#access #accesscontrol  БАЗА
+
+// access control
+// internal - класс будет только внутри этой программы ставиться по умолчанию class {}
+// при написании тестов доступа не будет
+class Template {}
+internal class Template2 {}
+
+// fileprivate - сокрытие доступа за границами файла, если пишеться код в этом файле - то доступ будет получен
+class testFilePrivate {
+    fileprivate var name = ""
+}
+var test = testFilePrivate()
+test.name
+
+// private - закрытый на запись и чтение наружу
+// private (set) - закрытый на запись, открытый на чтение наружу
+
+// Всегда применяеться более закрытый уровень доступа
+private class PrivateClass {   // explicitly private class
+    func test() {}             // implicitly private class member
+}
+// Все равные объекты в interanal class остаються такими же
+class IntertalClass {      // равный уровень доступа - internal
+    var someProperty = 0   // равный уровень доступа - internal
+}
+
+// open - highest access level
+// public - не даёт доступа с наружи к наследованию и override
+
+
