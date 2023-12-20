@@ -1,0 +1,28 @@
+class Object {
+    var name: String
+    var size: Int
+    var describe: String {
+        "object size is: \(size)"
+    }
+    init(name: String, size: Int) {
+        self.name = name
+        self.size = size
+    }
+    
+}
+class House: Object {
+    var price: Int
+    init(price: Int, name: String, size: Int) {
+        self.price = price
+        super.init(name: name, size: size)
+    }
+}
+class Person {
+    final func attend(_ place: Object) {
+        print("I've attended - \(place.name) and \(place.describe) square meteres")
+    }
+}
+
+var bigHouse = House(price: 320_000, name: "Gavan`", size: 180)
+var Vinston = Person()
+Vinston.attend(bigHouse)  // I've attended - Gavan` and object size is: 180 square meteres
